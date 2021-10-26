@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "786930799898",
+    "project_id": "geek-a-heartz-project",
+    "storage_bucket": "geek-a-heartz-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:786930799898:android:f835f44a3822cd35fa88a3",
+        "android_client_info": {
+          "package_name": "com.example.geek_a_heartzproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "786930799898-a91e239rlmhh46gmsr3cipvuut6ijno0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBowT2F0MTwJKmF1keZXYhTV4xZ5r7kjOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "786930799898-a91e239rlmhh46gmsr3cipvuut6ijno0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
