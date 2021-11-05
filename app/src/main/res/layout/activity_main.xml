@@ -117,9 +117,9 @@
             android:backgroundTint="#4374F3"
             android:gravity="center"
             android:paddingEnd="10dp"
-            android:textAllCaps="false"
             android:paddingRight="10dp"
             android:text="Login"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
@@ -127,15 +127,15 @@
             android:id="@+id/registerBtn"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/button_radius"
             android:gravity="center"
-            android:textColor="#818181"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
             android:padding="10dp"
-            android:textSize="18sp"/>
+            android:text="Sign Up"
+            android:textColor="#818181"
+            android:textSize="18sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

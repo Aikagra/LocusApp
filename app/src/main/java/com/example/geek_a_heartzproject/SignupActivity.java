@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.transition.Explode;
@@ -41,7 +42,11 @@ public class SignupActivity extends AppCompatActivity {
         backBtnSignup = findViewById(R.id.backBtnSignup);
 
 
+
+
+
         backBtnSignup.setOnClickListener(view -> {
+
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 startActivity(intent,
@@ -52,11 +57,6 @@ public class SignupActivity extends AppCompatActivity {
 
 
         });
-
-
-
-
-
 
     }
 

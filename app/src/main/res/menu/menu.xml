@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fundingItem"
+        android:title="Funding"
+        android:icon="@drawable/ic_funding"
+        />
+
+    <item
+        android:id="@+id/homeItem"
+        android:title="Home"
+        android:icon="@drawable/ic_home"
+        />
+
+    <item
+        android:id="@+id/learnItem"
+        android:title="Learn"
+        android:icon="@drawable/ic_baseline_cast_for_education_24"
+        />
+
+
+</menu>
