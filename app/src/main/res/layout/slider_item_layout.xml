@@ -12,22 +12,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="10dp"
+
         android:background="@drawable/bg_overlay"
         android:layout_alignParentBottom="true">
 
 
-        <TextView
-            android:id="@+id/textDescription"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Fortnite"
-            android:textColor="@color/white"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:gravity="left|center"
-            android:layout_marginLeft="10dp"
-            />
+
 
     </RelativeLayout>
 

@@ -10,18 +10,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeekAHeartzProject">
         <activity
+            android:windowSoftInputMode="adjustPan"
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:windowSoftInputMode="adjustPan"
+            android:name=".SharedElementMentorActivity"
+            android:exported="false" />
+        <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".LearnActivity"
             android:exported="false" />
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".FundingActivity"
             android:exported="false" />
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".SignupActivity"
             android:exported="true" />
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -31,6 +44,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:windowSoftInputMode="adjustPan"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
