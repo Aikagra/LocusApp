@@ -18,7 +18,7 @@
         <entry key="app/src/main/res/drawable/selector.xml" value="0.10185185185185185" />
         <entry key="app/src/main/res/layout/activity_funding.xml" value="0.14387031408308004" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.24133333333333334" />
-        <entry key="app/src/main/res/layout/activity_learn.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_learn.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_shared_element_mentor.xml" value="0.29393115942028986" />

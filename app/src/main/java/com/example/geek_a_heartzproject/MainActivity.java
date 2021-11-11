@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.transition.Explode;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +20,8 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 
 public class MainActivity extends AppCompatActivity {
 
-  TextView registerBtn;
-  ExtendedFloatingActionButton loginBtn;
+  Button registerBtn, loginBtn;
+
   SoundPool soundPool;
   float volume;
 

@@ -6,71 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".LearnActivity">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavBar"
-        app:itemTextColor="@drawable/selector"
-        app:itemBackground="@color/blue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:itemIconTint="@drawable/selector"
-        app:menu="@menu/menu"
-        android:layout_gravity="bottom"
-        android:background="@color/blue"
-        android:layout_alignParentBottom="true"
-        />
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        >
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:paddingTop="90dp"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             android:orientation="vertical">
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="76dp"
-                android:background="@color/blue"
-                android:orientation="horizontal">
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_search"
-                    android:backgroundTint="@color/white"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="17dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
-                        android:src="@drawable/ic_search" />
-
-
-                </LinearLayout>
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:clickable="true"
-                    android:transitionName="profileTransition"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/tanmay" />
-
-            </LinearLayout>
 
 
             <TextView
@@ -87,6 +34,7 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/white"
                 android:scrollbarSize="0dp"
                 >
 
@@ -158,7 +106,6 @@
                                 android:layout_marginTop="10dp"
                                 android:layout_gravity="center"
                                 android:src="@drawable/smallcircle"
-                                android:transitionName="transitionMentor2"
                                 />
 
                             <TextView
@@ -175,6 +122,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardviewMentor3"
                         android:layout_width="150dp"
                         android:layout_height="150dp"
                         android:layout_margin="20dp"
@@ -231,6 +179,8 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp"
+                android:background="@color/white"
                 android:scrollbarSize="0dp"
                 >
 
@@ -240,6 +190,7 @@
                     android:orientation="horizontal">
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardviewWorshop1"
                         android:layout_width="200dp"
                         android:layout_height="120dp"
                         android:layout_margin="20dp"
@@ -264,6 +215,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardviewWorshop2"
                         android:layout_width="200dp"
                         android:layout_height="120dp"
                         android:layout_margin="20dp"
@@ -297,6 +249,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardviewWorshop3"
                         android:layout_width="200dp"
                         android:layout_height="120dp"
                         android:layout_margin="20dp"
@@ -339,6 +292,73 @@
 
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:background="@color/blue"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search"
+            android:backgroundTint="@color/white"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="17dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_search" />
+
+            <AutoCompleteTextView
+                android:id="@+id/searchBarLearn"
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_marginEnd="10dp"
+                android:layout_marginLeft="3dp"
+                />
+
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePicLearn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:clickable="true"
+            android:transitionName="profileTransition"
+            android:src="@drawable/tanmay" />
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavBar"
+        app:itemTextColor="@drawable/selector"
+        app:itemBackground="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/menu"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"
+        />
 
 
 
