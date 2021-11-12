@@ -17,9 +17,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
-import com.smarteist.autoimageslider.SliderAnimations;
-import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
 
@@ -100,7 +97,7 @@ public class LearnActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.e("Index", "" + i);
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", ((TextView) view).getText());
                 //may need later
@@ -207,7 +204,7 @@ public class LearnActivity extends AppCompatActivity {
         cardViewMentor2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Ben Decker");
                 //may need later
@@ -221,7 +218,7 @@ public class LearnActivity extends AppCompatActivity {
         cardViewMentor1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Jimmy Dasaint");
                 //may need later
@@ -235,7 +232,7 @@ public class LearnActivity extends AppCompatActivity {
         cardViewMentor3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Naresh Narasimhan");
                 //may need later
@@ -249,7 +246,7 @@ public class LearnActivity extends AppCompatActivity {
         cardViewWorkshop1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Startup Advice Sessions");
                 //may need later
@@ -263,7 +260,7 @@ public class LearnActivity extends AppCompatActivity {
         cardViewWorkshop2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "The Open University");
                 //may need later
@@ -277,7 +274,7 @@ public class LearnActivity extends AppCompatActivity {
         cardViewWorkshop3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Offline Workshops");
                 //may need later

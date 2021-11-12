@@ -2,20 +2,17 @@ package com.example.geek_a_heartzproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Fade;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -97,7 +94,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.e("Index", "" + i);
-                Intent intent = new Intent(HomeActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ExpandedCardView.class);
                 //change name
                 //Workshops
                 intent.putExtra("imgTransition", R.drawable.workshop1);

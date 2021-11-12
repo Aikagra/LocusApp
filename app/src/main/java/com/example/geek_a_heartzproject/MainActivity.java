@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText loginEmail, loginPw;
     private LottieAnimationView lottieAnimationView;
     private FirebaseAuth mAuth;
+    TextView forgotPassword;
 
 
     @Override
@@ -53,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         loginEmail = findViewById(R.id.loginEmail);
         loginPw = findViewById(R.id.loginPw);
         mAuth = FirebaseAuth.getInstance();
+        forgotPassword = findViewById(R.id.forgotPassword);
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ForgotPasswordActivity.class));
+            }
+        });
 
 
         loginBtn.setOnClickListener(new View.OnClickListener() {

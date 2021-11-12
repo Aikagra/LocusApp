@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/drawable/login_bg.xml" value="0.2722222222222222" />
         <entry key="app/src/main/res/drawable/logout.xml" value="0.2740740740740741" />
         <entry key="app/src/main/res/drawable/selector.xml" value="0.10185185185185185" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/layout/activity_funding.xml" value="0.14387031408308004" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.24133333333333334" />
         <entry key="app/src/main/res/layout/activity_learn.xml" value="0.165" />

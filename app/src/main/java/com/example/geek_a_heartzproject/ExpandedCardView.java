@@ -3,16 +3,12 @@ package com.example.geek_a_heartzproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.transition.Fade;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.imageview.ShapeableImageView;
 
-import org.w3c.dom.Text;
-
-public class SharedElementMentorActivity extends AppCompatActivity {
+public class ExpandedCardView extends AppCompatActivity {
 
     TextView nameTransition, textTransition;
     ShapeableImageView imgTransition;
@@ -21,7 +17,7 @@ public class SharedElementMentorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shared_element_mentor);
+        setContentView(R.layout.activity_expanded_card_view);
 
         nameTransition = findViewById(R.id.nameTransition);
         textTransition = findViewById(R.id.textTransition);

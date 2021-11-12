@@ -98,7 +98,7 @@ public class FundingActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.e("Index", "" + i);
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", ((TextView) view).getText());
                 //may need later
@@ -205,7 +205,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewInvestor1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Roger Ehrenberg");
                 //may need later
@@ -219,7 +219,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewInvestor2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Keith Rabois");
                 //may need later
@@ -233,7 +233,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewInvestor3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Marc Andreessen");
                 //may need later
@@ -247,7 +247,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewInvestor4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Anupam Mittal");
                 //may need later
@@ -263,7 +263,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewVenture1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Accel");
                 //may need later
@@ -277,7 +277,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewVenture2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Andreessen Horowitz");
                 //may need later
@@ -291,7 +291,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewVenture3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Index Ventures");
                 //may need later
@@ -305,7 +305,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewVenture4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Sequoia");
                 //may need later
@@ -321,7 +321,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewFunding1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "KickStarter");
                 //may need later
@@ -335,7 +335,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewFunding2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "IndieGogo");
                 //may need later
@@ -349,7 +349,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewFunding3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "CrowdSupplu");
                 //may need later
@@ -365,7 +365,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewBank1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Bank of America");
                 //may need later
@@ -379,7 +379,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewBank2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "JPMorgan Chase and Co.");
                 //may need later
@@ -393,7 +393,7 @@ public class FundingActivity extends AppCompatActivity {
         cardViewBank3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FundingActivity.this, SharedElementMentorActivity.class);
+                Intent intent = new Intent(FundingActivity.this, ExpandedCardView.class);
                 //change name
                 intent.putExtra("name_transition", "Wells Fargo");
                 //may need later
