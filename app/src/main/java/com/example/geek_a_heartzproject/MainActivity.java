@@ -29,6 +29,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -99,9 +100,10 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
 
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                            lottieAnimationView.setVisibility(View.GONE);
 
                         } else {
-                            Toast.makeText(MainActivity.this, "Failed to login, please check the credentials", Toast.LENGTH_LONG).show();
+                            FancyToast.makeText(MainActivity.this, "Failed to login, please check the credentials", FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
                             lottieAnimationView.setVisibility(View.GONE);
 
                         }
