@@ -23,7 +23,8 @@ import org.w3c.dom.Text;
 
 public class SignupActivity extends AppCompatActivity {
 
-    TextView backBtnSignup;
+    Button backBtnSignup, signupBtn;
+
 
 
     @Override
@@ -40,10 +41,24 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         backBtnSignup = findViewById(R.id.backBtnSignup);
+        signupBtn = findViewById(R.id.signupButton);
+
+        //Toast for signup button
+
+        signupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FancyToast.makeText(SignupActivity
+                        .this, "Functionality not yet added",
+                        FancyToast.LENGTH_LONG,
+                        FancyToast.INFO, true).show();
+
+            }
+        });
 
 
 
-
+            //functionality for login button on signup page
 
         backBtnSignup.setOnClickListener(view -> {
 
@@ -60,14 +75,6 @@ public class SignupActivity extends AppCompatActivity {
 
     }
 
-    public void signUpBtn(View view) {
-        FancyToast.makeText(SignupActivity.this,
-                "name = misterx" +
-                        " password = fortnite12",
-                FancyToast.LENGTH_LONG,
-                FancyToast.SUCCESS,
-                false)
-                .show();
 
     }
-}
+

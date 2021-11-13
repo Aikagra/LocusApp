@@ -2,10 +2,13 @@ package com.example.geek_a_heartzproject;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.view.ViewCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -48,6 +51,9 @@ public class HomeActivity extends AppCompatActivity {
        CircleImageView profileDetails = findViewById(R.id.profilePicHome);
 
 
+
+
+       //array list for search view
 
         arrayList = new ArrayList<String>();
 
@@ -193,7 +199,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
-        //adding functionality to when bottom navigation is clicked
+        //adding functionality to bottom navigation
 
 
                 bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -224,6 +230,7 @@ public class HomeActivity extends AppCompatActivity {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(HomeActivity.this, profileDetails,  ViewCompat.getTransitionName(profileDetails));
                 startActivity(intent, options.toBundle());
+
             }
         });
 

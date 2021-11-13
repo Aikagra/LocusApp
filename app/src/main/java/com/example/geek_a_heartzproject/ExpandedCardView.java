@@ -1,8 +1,10 @@
 package com.example.geek_a_heartzproject;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ public class ExpandedCardView extends AppCompatActivity {
 
     TextView nameTransition, textTransition;
     ShapeableImageView imgTransition;
+    AppCompatImageButton appCompatImageButton;
 
 
     @Override
@@ -19,10 +22,23 @@ public class ExpandedCardView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expanded_card_view);
 
+        //assigning id's
+
         nameTransition = findViewById(R.id.nameTransition);
         textTransition = findViewById(R.id.textTransition);
 
         imgTransition = findViewById(R.id.imgTransition);
+
+        appCompatImageButton = findViewById(R.id.backBtnCardView);
+
+        appCompatImageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+
 
         String nameTransition1 = getIntent().getStringExtra("name_transition");
 

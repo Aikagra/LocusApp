@@ -31,12 +31,16 @@ public class ProfileActivity extends AppCompatActivity {
         imageButton = findViewById(R.id.backBtnProfile);
         CircleImageView profileDetails = findViewById(R.id.profilePicProfile);
 
+        //functionality for back button
+
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
             }
         });
+
+        //intent with shared element transition for edit profile button
 
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +50,8 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent, options.toBundle());
             }
         });
+
+        //logout button functionality
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override

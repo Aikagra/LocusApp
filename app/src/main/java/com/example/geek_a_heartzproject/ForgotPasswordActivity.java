@@ -9,9 +9,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +21,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
 
     private EditText emailEditText;
     private Button resetPwButton, goToLogin;
-    LottieAnimationView lottieAnimationView;
+
 
     FirebaseAuth auth;
 
@@ -33,11 +30,16 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
 
+        //assigning id's
+
 
         emailEditText = findViewById(R.id.forgotPwEmail);
         resetPwButton = findViewById(R.id.resetPasswordButton);
-        lottieAnimationView = findViewById(R.id.animationLottieFP);
         goToLogin = findViewById(R.id.goToLogin);
+        auth = FirebaseAuth.getInstance();
+        CustomDialogClass cdd=new CustomDialogClass(ForgotPasswordActivity.this);
+
+        //intent to login screen when logout is clicked
 
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +49,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
             }
         });
 
-        auth = FirebaseAuth.getInstance();
+        //reset password functionality
+
 
         resetPwButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,16 +73,16 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     emailEditText.requestFocus();
                     return;
                 }
-                lottieAnimationView.setVisibility(View.VISIBLE);
+               cdd.show();
                 auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            FancyToast.makeText(ForgotPasswordActivity.this, "Password Reset Email Sent", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true);
-                            lottieAnimationView.setVisibility(View.GONE);
+                            FancyToast.makeText(ForgotPasswordActivity.this, "Password Reset Email Sent", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
+                            cdd.dismiss();
                         } else {
-                            FancyToast.makeText(ForgotPasswordActivity.this, "Error Occurred, Please Try Again", FancyToast.LENGTH_LONG, FancyToast.ERROR, true);
-                            lottieAnimationView.setVisibility(View.GONE);
+                            FancyToast.makeText(ForgotPasswordActivity.this, "Error Occurred, Please Try Again", FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
+                            cdd.dismiss();
                         }
                     }
                 });

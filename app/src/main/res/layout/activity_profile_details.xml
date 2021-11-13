@@ -45,9 +45,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textSize="18sp"/>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editProfileName"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="20dp"
@@ -59,6 +57,7 @@
         >
 
         <EditText
+            android:id="@+id/profileEditName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
@@ -69,38 +68,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:gravity="start"
-        android:textColor="@color/black"
-        android:padding="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="18sp"/>
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editProfilePassword"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/bg_edit_text"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        android:backgroundTint="@android:color/transparent"
-        >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp"
-            android:background="@drawable/bg_edit_text"
-            android:inputType="text"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -113,9 +81,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textSize="18sp"/>
-
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editProfileEmail"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="20dp"
@@ -127,6 +93,41 @@
         >
 
         <EditText
+            android:id="@+id/profileEditEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/bg_edit_text"
+            android:inputType="text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:gravity="start"
+        android:textColor="@color/black"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="18sp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/bg_edit_text"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        android:backgroundTint="@android:color/transparent"
+        >
+
+        <EditText
+            android:id="@+id/profileEditPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="10dp"
@@ -137,7 +138,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/updateUser"
         android:layout_width="190dp"
         android:layout_height="50dp"
         android:background="@drawable/button_radius"

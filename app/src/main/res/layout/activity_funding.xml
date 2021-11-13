@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white"
     android:layout_height="match_parent"
     tools:context=".FundingActivity">
+
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -513,21 +516,24 @@
         android:layout_width="match_parent"
         android:layout_height="76dp"
         android:background="@color/blue"
-        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior">
+
+
+
 
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="44dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginBottom="16dp"
             android:layout_weight="1"
             android:background="@drawable/bg_search"
             android:backgroundTint="@color/white"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="17dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -541,10 +547,9 @@
                 android:id="@+id/searchBarFunding"
                 android:layout_width="243dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginEnd="10dp"
                 android:layout_marginLeft="3dp"
-                />
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1" />
 
 
         </LinearLayout>
@@ -556,8 +561,8 @@
             android:layout_gravity="center_vertical"
             android:layout_marginRight="20dp"
             android:clickable="true"
-            android:transitionName="profileTransition"
-            android:src="@drawable/tanmay" />
+            android:src="@drawable/tanmay"
+            android:transitionName="profileTransition" />
 
     </LinearLayout>
 

@@ -3,6 +3,8 @@ package com.example.geek_a_heartzproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityOptionsCompat;
+import androidx.core.view.ViewCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +20,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class FundingActivity extends AppCompatActivity {
 
     CardView cardViewInvestor1, cardViewInvestor2, cardViewInvestor3, cardViewInvestor4
@@ -26,6 +30,7 @@ public class FundingActivity extends AppCompatActivity {
             ,cardViewBank1, cardViewBank2, cardViewBank3;
     BottomNavigationView bottomNavigationView;
     ArrayList<String> arrayList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +54,9 @@ public class FundingActivity extends AppCompatActivity {
         cardViewBank1 = findViewById(R.id.cardviewBank1);
         cardViewBank2 = findViewById(R.id.cardviewBank2);
         cardViewBank3 = findViewById(R.id.cardviewBank3);
+
+        CircleImageView profileDetails = findViewById(R.id.profilePicFunding);
+
 
 
         bottomNavigationView = findViewById(R.id.bottomNavBar);
@@ -401,6 +409,16 @@ public class FundingActivity extends AppCompatActivity {
                 //change image
                 intent.putExtra("imgTransition", R.drawable.bank3);
                 startActivity(intent);
+            }
+        });
+
+        //adding functionality to the profile button
+        profileDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FundingActivity.this, ProfileActivity.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(FundingActivity.this, profileDetails,  ViewCompat.getTransitionName(profileDetails));
+                startActivity(intent, options.toBundle());
             }
         });
 

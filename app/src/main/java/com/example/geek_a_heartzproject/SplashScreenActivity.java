@@ -13,6 +13,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+        //splash screen delay and then intent
+
         Thread thread = new Thread(){
 
             public void run(){
