@@ -1,5 +1,7 @@
 package com.example.geek_a_heartzproject;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.transition.Explode;
 import android.transition.Fade;
 import android.transition.Slide;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -20,11 +23,15 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.core.Tag;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import org.w3c.dom.Text;
@@ -107,8 +114,23 @@ public class SignupActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
-                                    FancyToast.makeText(SignupActivity.this, "Signup Successful", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                                    cdd.dismiss();
+
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void unused) {
+                                            FancyToast.makeText(SignupActivity.this, "Verification Email Sent", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                            cdd.dismiss();
+                                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.d(TAG, "on Failure : email not sent" + e.getMessage());
+                                            cdd.dismiss();
+                                        }
+                                    });
                                 } else {
                                     FancyToast.makeText(SignupActivity.this, "Signup Unsuccessful", FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                                     cdd.dismiss();

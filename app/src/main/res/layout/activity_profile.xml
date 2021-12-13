@@ -14,6 +14,8 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
+
+
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/backBtnProfile"
             style="@style/Widget.AppCompat.ActionButton"
@@ -22,6 +24,18 @@
             android:padding="10dp"
             android:src="@drawable/ic_back"
             app:tint="@color/black" />
+        <Button
+            android:id="@+id/resendEmail"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="100dp"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:text="Verify Email"
+            android:background="@drawable/edit_details"
+            android:textAllCaps="false"/>
 
 
     </LinearLayout>
@@ -68,6 +82,8 @@
         android:background="@drawable/edit_details"
         android:layout_marginTop="40dp"
         android:textAllCaps="false"/>
+
+
 
 
 
