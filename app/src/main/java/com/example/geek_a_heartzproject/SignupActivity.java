@@ -1,5 +1,6 @@
 package com.example.geek_a_heartzproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -10,13 +11,20 @@ import android.os.Bundle;
 import android.transition.Explode;
 import android.transition.Fade;
 import android.transition.Slide;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import org.w3c.dom.Text;
@@ -24,6 +32,8 @@ import org.w3c.dom.Text;
 public class SignupActivity extends AppCompatActivity {
 
     Button backBtnSignup, signupBtn;
+    EditText passwordSignup, nameSignup, emailSignup;
+    private FirebaseAuth mAuth;
 
 
 
@@ -42,16 +52,71 @@ public class SignupActivity extends AppCompatActivity {
 
         backBtnSignup = findViewById(R.id.backBtnSignup);
         signupBtn = findViewById(R.id.signupButton);
+        passwordSignup = findViewById(R.id.passwordSignup);
+        nameSignup = findViewById(R.id.nameSignup);
+        mAuth = FirebaseAuth.getInstance();
+        emailSignup = findViewById(R.id.emailSignup);
+        CustomDialogClass cdd = new CustomDialogClass(SignupActivity.this);
+
 
         //Toast for signup button
 
         signupBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FancyToast.makeText(SignupActivity
-                        .this, "Functionality not yet added",
-                        FancyToast.LENGTH_LONG,
-                        FancyToast.INFO, true).show();
+                registerUser();
+            }
+
+            private void registerUser() {
+                String email = emailSignup.getText().toString().trim();
+                String password = passwordSignup.getText().toString().trim();
+                String name = nameSignup.getText().toString().trim();
+
+                if (name.isEmpty()){
+                    nameSignup.setError("Full Name is required");
+                    nameSignup.requestFocus();
+                    return;
+                }
+
+                if (email.isEmpty()){
+                    emailSignup.setError("Email is required");
+                    emailSignup.requestFocus();
+                    return;
+                }
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    emailSignup.setError("Provide a valid email");
+                    emailSignup.requestFocus();
+                    return;
+                }
+
+                if (password.isEmpty()){
+                    passwordSignup.setError("Password is Required");
+                    passwordSignup.requestFocus();
+                    return;
+                }
+
+                if (password.length() < 6){
+                    passwordSignup.setError("Provide a password with atleast 6 characters");
+                    passwordSignup.requestFocus();
+                    return;
+                }
+
+                cdd.show();
+                mAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()){
+                                    FancyToast.makeText(SignupActivity.this, "Signup Successful", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                    cdd.dismiss();
+                                } else {
+                                    FancyToast.makeText(SignupActivity.this, "Signup Unsuccessful", FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
+                                    cdd.dismiss();
+                                }
+                            }
+                        });
+
+
 
             }
         });

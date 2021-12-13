@@ -127,11 +127,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent,
                         ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 
-            } else {
-
             }
 
         });
+        
 
 
     }

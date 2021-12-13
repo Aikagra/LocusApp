@@ -1,13 +1,14 @@
 {
   "project_info": {
     "project_number": "786930799898",
+    "firebase_url": "https://geek-a-heartz-project-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "geek-a-heartz-project",
     "storage_bucket": "geek-a-heartz-project.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:786930799898:android:f835f44a3822cd35fa88a3",
+        "mobilesdk_app_id": "1:786930799898:android:a4973ced230be4e5fa88a3",
         "android_client_info": {
           "package_name": "com.example.geek_a_heartzproject"
         }
