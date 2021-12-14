@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "786930799898",
-    "firebase_url": "https://geek-a-heartz-project-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "geek-a-heartz-project",
-    "storage_bucket": "geek-a-heartz-project.appspot.com"
+    "project_number": "339352410115",
+    "firebase_url": "https://locus-4d929-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "locus-4d929",
+    "storage_bucket": "locus-4d929.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:786930799898:android:a4973ced230be4e5fa88a3",
+        "mobilesdk_app_id": "1:339352410115:android:7a37bd3f70fbd1ee961636",
         "android_client_info": {
-          "package_name": "com.example.geek_a_heartzproject"
+          "package_name": "com.example.locustask"
         }
       },
       "oauth_client": [
         {
-          "client_id": "786930799898-a91e239rlmhh46gmsr3cipvuut6ijno0.apps.googleusercontent.com",
+          "client_id": "339352410115-4vm7n86j61660oh3jhmg5c15gteaj1gk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBowT2F0MTwJKmF1keZXYhTV4xZ5r7kjOA"
+          "current_key": "AIzaSyCQTVtwAv7gbdD4HQ26t74QT9BioH5Bnp8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "786930799898-a91e239rlmhh46gmsr3cipvuut6ijno0.apps.googleusercontent.com",
+              "client_id": "339352410115-4vm7n86j61660oh3jhmg5c15gteaj1gk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

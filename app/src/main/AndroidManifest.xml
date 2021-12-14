@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.geek_a_heartzproject">
+    package="com.example.locustask">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -12,37 +12,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeekAHeartzProject">
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name="com.example.locustask.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileDetailsActivity"
+            android:name="com.example.locustask.ProfileDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name="com.example.locustask.ProfileActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".ExpandedCardView"
+            android:name="com.example.locustask.ExpandedCardView"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".LearnActivity"
+            android:name="com.example.locustask.LearnActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".FundingActivity"
+            android:name="com.example.locustask.FundingActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".HomeActivity"
+            android:name="com.example.locustask.HomeActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SignupActivity"
+            android:name="com.example.locustask.SignupActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name="com.example.locustask.SplashScreenActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>
@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.locustask.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustPan">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.example.geek_a_heartzproject;
+package com.example.locustask;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +13,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.shashank.sony.fancytoastlib.FancyToast;
-
-import java.util.regex.Pattern;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
 
