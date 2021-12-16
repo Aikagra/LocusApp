@@ -343,7 +343,7 @@
             android:layout_marginRight="20dp"
             android:clickable="true"
             android:transitionName="profileTransition"
-            android:src="@drawable/tanmay" />
+            android:src="@drawable/photo" />
 
     </LinearLayout>
 

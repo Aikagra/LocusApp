@@ -561,7 +561,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginRight="20dp"
             android:clickable="true"
-            android:src="@drawable/tanmay"
+            android:src="@drawable/photo"
             android:transitionName="profileTransition" />
 
     </LinearLayout>
