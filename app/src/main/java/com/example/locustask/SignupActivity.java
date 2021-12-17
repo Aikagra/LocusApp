@@ -77,32 +77,35 @@ public class SignupActivity extends AppCompatActivity {
                 if (name.isEmpty()){
                     nameSignup.setError("Full Name is required");
                     nameSignup.requestFocus();
+                    return;
                 }
                 if (email.isEmpty()){
                     emailSignup.setError("Email is required");
                     emailSignup.requestFocus();
-
+                    return;
                 }
                 if (!Patterns.WEB_URL.matcher(email).matches()){
                     emailSignup.setError("Provide a valid email");
                     emailSignup.requestFocus();
-
+                    return;
                 }
 
                 if (password.isEmpty()){
                     passwordSignup.setError("Password is Required");
                     passwordSignup.requestFocus();
-
+                    return;
                 }
 
                 if (password.length() < 4){
                     passwordSignup.setError("Provide a password with at least 4 characters");
                     passwordSignup.requestFocus();
+                    return;
                 }
 
                 if (password.length() > 6){
                     passwordSignup.setError("Password cannot be more than 6 digits");
                     passwordSignup.requestFocus();
+                    return;
                 }
 
                 cdd.show();
