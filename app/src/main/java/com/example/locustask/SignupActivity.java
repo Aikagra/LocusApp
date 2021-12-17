@@ -18,8 +18,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,12 +42,13 @@ public class SignupActivity extends AppCompatActivity {
 
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
 
+        setContentView(R.layout.activity_signup);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setExitTransition(new Explode());
         }
 
-        setContentView(R.layout.activity_signup);
+
 
         backBtnSignup = findViewById(R.id.backBtnSignup);
         signupBtn = findViewById(R.id.signupButton);
@@ -60,9 +59,6 @@ public class SignupActivity extends AppCompatActivity {
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Users");
         CustomDialogClass cdd = new CustomDialogClass(SignupActivity.this);
-
-
-
 
 
         //Toast for signup button
@@ -81,40 +77,36 @@ public class SignupActivity extends AppCompatActivity {
                 if (name.isEmpty()){
                     nameSignup.setError("Full Name is required");
                     nameSignup.requestFocus();
-                    return;
                 }
-
-                if (name.length() > 10){
-                    passwordSignup.setError("Name cannot be longer than 10 characters");
-                    passwordSignup.requestFocus();
-                    return;
-                }
-
                 if (email.isEmpty()){
                     emailSignup.setError("Email is required");
                     emailSignup.requestFocus();
-                    return;
+
                 }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!Patterns.WEB_URL.matcher(email).matches()){
                     emailSignup.setError("Provide a valid email");
                     emailSignup.requestFocus();
-                    return;
+
                 }
 
                 if (password.isEmpty()){
                     passwordSignup.setError("Password is Required");
                     passwordSignup.requestFocus();
-                    return;
+
                 }
 
-                if (password.length() < 6){
-                    passwordSignup.setError("Provide a password with atleast 6 characters");
+                if (password.length() < 4){
+                    passwordSignup.setError("Provide a password with at least 4 characters");
                     passwordSignup.requestFocus();
-                    return;
+                }
+
+                if (password.length() > 6){
+                    passwordSignup.setError("Password cannot be more than 6 digits");
+                    passwordSignup.requestFocus();
                 }
 
                 cdd.show();
-                mAuth.createUserWithEmailAndPassword(email, password)
+                mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -122,55 +114,46 @@ public class SignupActivity extends AppCompatActivity {
 
                                     UserHelperClass helperClass = new UserHelperClass(name, email);
 
-                                    reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(helperClass);
+                                    reference.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(password);
 
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
-                                        public void onSuccess(Void unused) {
-                                            FancyToast.makeText(SignupActivity.this, "Verification Email Sent", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                                            cdd.dismiss();
-                                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
-
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d(TAG, "on Failure : email not sent" + e.getMessage());
-                                            cdd.dismiss();
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (!task.isSuccessful())
+                                            {
+                                                FancyToast.makeText(SignupActivity.this, "Verification Email Sent", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                                cdd.show();
+                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                            }else {
+                                                Log.d(TAG, "on Failure : email not sent" + task.getException().getMessage());
+                                                cdd.show();
+                                            }
                                         }
                                     });
                                 } else {
-                                    FancyToast.makeText(SignupActivity.this, "Signup Unsuccessful", FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
-                                    cdd.dismiss();
+                                    FancyToast.makeText(SignupActivity.this, "Signup Unsuccessful", FancyToast.ERROR, FancyToast.LENGTH_SHORT, true).show();
+                                    cdd.show();
                                 }
                             }
                         });
 
-
-
             }
         });
 
 
 
-            //functionality for login button on signup page
+        //functionality for login button on signup page
 
         backBtnSignup.setOnClickListener(view -> {
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                startActivity(intent,
-                        ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
             }else {
                 startActivity(intent);
             }
-
-
         });
-
     }
-
-
-    }
+}
 
