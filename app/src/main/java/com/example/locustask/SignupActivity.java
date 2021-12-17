@@ -151,7 +151,7 @@ public class SignupActivity extends AppCompatActivity {
         backBtnSignup.setOnClickListener(view -> {
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                 startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
             }else {
                 startActivity(intent);
