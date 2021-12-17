@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="#e3e2de"
     tools:context=".LearnActivity">
 
     <ScrollView
@@ -35,7 +35,7 @@
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white"
+                android:background="#e3e2de"
                 android:scrollbarSize="0dp"
                 >
 
@@ -181,7 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="100dp"
-                android:background="@color/white"
+                android:background="#e3e2de"
                 android:scrollbarSize="0dp"
                 >
 

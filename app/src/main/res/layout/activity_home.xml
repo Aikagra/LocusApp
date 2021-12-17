@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="#e3e2de"
     tools:context=".HomeActivity">
 
 
@@ -72,7 +72,7 @@
 
                     <CalendarView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="330dp"
                         android:focusedMonthDateColor="@color/blue"
                         android:unfocusedMonthDateColor="@color/white"
                         />

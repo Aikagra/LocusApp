@@ -57,9 +57,10 @@ public class SignupActivity extends AppCompatActivity {
         nameSignup = findViewById(R.id.nameSignup);
         mAuth = FirebaseAuth.getInstance();
         emailSignup = findViewById(R.id.emailSignup);
-        CustomDialogClass cdd = new CustomDialogClass(SignupActivity.this);
         rootNode = FirebaseDatabase.getInstance();
         reference = rootNode.getReference("Users");
+        CustomDialogClass cdd = new CustomDialogClass(SignupActivity.this);
+
 
 
 
@@ -80,6 +81,12 @@ public class SignupActivity extends AppCompatActivity {
                 if (name.isEmpty()){
                     nameSignup.setError("Full Name is required");
                     nameSignup.requestFocus();
+                    return;
+                }
+
+                if (name.length() > 10){
+                    passwordSignup.setError("Name cannot be longer than 10 characters");
+                    passwordSignup.requestFocus();
                     return;
                 }
 
