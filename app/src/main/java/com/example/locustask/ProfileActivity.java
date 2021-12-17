@@ -13,11 +13,17 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -27,6 +33,11 @@ public class ProfileActivity extends AppCompatActivity {
     Button editProfileBtn, logoutBtn, resendEmail;
     AppCompatImageButton imageButton;
     FirebaseAuth mAuth;
+    TextView nameMember;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+    String userId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +51,27 @@ public class ProfileActivity extends AppCompatActivity {
         CircleImageView profileDetails = findViewById(R.id.profilePicProfile);
         resendEmail = findViewById(R.id.resendEmail);
         mAuth = FirebaseAuth.getInstance();
+        nameMember = findViewById(R.id.nameMember);
         final FirebaseUser user = mAuth.getCurrentUser();
         CustomDialogClass cdd = new CustomDialogClass(ProfileActivity.this);
+
+        rootNode = FirebaseDatabase.getInstance();
+
+        userId = mAuth.getCurrentUser().getUid();
+        reference = rootNode.getReference("Users").child(userId);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                nameMember.setText(snapshot.child("name").getValue(String.class).toString());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
         //check if email is verified
         if (!user.isEmailVerified()){
@@ -83,7 +113,7 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, ProfileDetailsActivity.class );
+                Intent intent = new Intent(ProfileActivity.this, ProfileUpdateActivity.class );
                 ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(ProfileActivity.this, profileDetails,  ViewCompat.getTransitionName(profileDetails));
                 startActivity(intent, options.toBundle());
             }
@@ -99,8 +129,6 @@ public class ProfileActivity extends AppCompatActivity {
                 FancyToast.makeText(ProfileActivity.this,"Logged Out", FancyToast.LENGTH_SHORT, FancyToast.DEFAULT, true).show();
             }
         });
-
-
 
     }
 }

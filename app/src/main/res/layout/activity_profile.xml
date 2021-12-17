@@ -48,11 +48,12 @@
         android:transitionName="profileTransition"
         android:layout_marginTop="70dp"
         android:src="@drawable/photo" />
-    
+
     <TextView
+        android:id="@+id/nameMember"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tanmay Singhal"
+        android:text="Lorem Ipsum"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginTop="10dp"
@@ -63,14 +64,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Co Founder"
+        android:text="Member"
         android:layout_gravity="center"
         android:layout_marginTop="8dp" />
-
-
-
-
-
     <Button
         android:id="@+id/editProfileBtn"
         android:layout_width="320dp"

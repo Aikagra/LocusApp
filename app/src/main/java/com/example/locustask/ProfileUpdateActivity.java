@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import com.shashank.sony.fancytoastlib.FancyToast;
 
-public class ProfileDetailsActivity extends AppCompatActivity {
+public class ProfileUpdateActivity extends AppCompatActivity {
 
     AppCompatImageButton imageButton;
     Button updateUser;
@@ -34,7 +34,7 @@ public class ProfileDetailsActivity extends AppCompatActivity {
         updateUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FancyToast.makeText(ProfileDetailsActivity
+                FancyToast.makeText(ProfileUpdateActivity
                                 .this, "Functionality not yet added",
                         FancyToast.LENGTH_LONG,
                         FancyToast.INFO, true).show();
