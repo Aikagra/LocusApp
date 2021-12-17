@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-               cdd.show();
+                cdd.show();
                 WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
                 layoutParams.dimAmount = 0.75f;
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
                             FancyToast.makeText(MainActivity.this, "Logged In Successfully", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                           cdd.dismiss();
+                            cdd.dismiss();
 
                         } else {
                             FancyToast.makeText(MainActivity.this, "Failed to login, please check the credentials", FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
@@ -129,14 +129,14 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        
-
-
-    }
 
 
 
     }
+
+
+
+}
 
 
 

@@ -47,7 +47,7 @@ public class ExpandedCardView extends AppCompatActivity {
         int imgTransition1 = getIntent().getIntExtra("imgTransition", 0);
 
         nameTransition.setText(nameTransition1);
-       // textTransition.setText(textTransition1);
+        // textTransition.setText(textTransition1);
         imgTransition.setImageDrawable(getResources().getDrawable(imgTransition1));
 
         imgTransition.setScaleType(ImageView.ScaleType.CENTER_CROP);

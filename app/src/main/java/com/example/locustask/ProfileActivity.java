@@ -30,6 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
 
+
     Button editProfileBtn, logoutBtn, resendEmail;
     AppCompatImageButton imageButton;
     FirebaseAuth mAuth;
@@ -37,7 +38,6 @@ public class ProfileActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     String userId;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +71,6 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-
 
         //check if email is verified
         if (!user.isEmailVerified()){
@@ -125,10 +124,12 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(ProfileActivity.this, MainActivity.class));
-               mAuth.signOut();
+                mAuth.signOut();
                 FancyToast.makeText(ProfileActivity.this,"Logged Out", FancyToast.LENGTH_SHORT, FancyToast.DEFAULT, true).show();
             }
         });
+
+
 
     }
 }

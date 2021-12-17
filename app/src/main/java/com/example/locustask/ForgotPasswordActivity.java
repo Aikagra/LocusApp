@@ -35,7 +35,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         resetPwButton = findViewById(R.id.resetPasswordButton);
         goToLogin = findViewById(R.id.goToLogin);
         auth = FirebaseAuth.getInstance();
-        CustomDialogClass cdd=new CustomDialogClass(ForgotPasswordActivity.this);
+        CustomDialogClass cdd = new CustomDialogClass(ForgotPasswordActivity.this);
 
         //intent to login screen when logout is clicked
 
@@ -56,7 +56,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 resetPassword();
             }
 
-            private void resetPassword() {
+            public void resetPassword() {
 
                 String email = emailEditText.getText().toString().trim();
 
@@ -66,12 +66,12 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!Patterns.WEB_URL.matcher(email).matches()){
                     emailEditText.setError("Please provide a valid email");
                     emailEditText.requestFocus();
                     return;
                 }
-               cdd.show();
+                cdd.show();
                 auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

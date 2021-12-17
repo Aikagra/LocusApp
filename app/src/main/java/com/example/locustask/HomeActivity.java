@@ -13,6 +13,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -41,16 +43,16 @@ public class HomeActivity extends AppCompatActivity {
 
         //assigning id's
 
-       bottomNavigationView = findViewById(R.id.bottomNavBar);
+        bottomNavigationView = findViewById(R.id.bottomNavBar);
 
-       bottomNavigationView.setSelectedItemId(R.id.homeItem);
+        bottomNavigationView.setSelectedItemId(R.id.homeItem);
 
-       CircleImageView profileDetails = findViewById(R.id.profilePicHome);
-
-
+        CircleImageView profileDetails = findViewById(R.id.profilePicHome);
 
 
-       //array list for search view
+
+
+        //array list for search view
 
         arrayList = new ArrayList<String>();
 
@@ -101,91 +103,91 @@ public class HomeActivity extends AppCompatActivity {
                 //change name
                 //Workshops
                 intent.putExtra("imgTransition", R.drawable.workshop1);
-                if (((TextView) view).getText() == "The Open University")
+                if (((Button) view).getText() == "The Open University")
                 {
                     intent.putExtra("imgTransition", R.drawable.workshop2);
                 }
-                if (((TextView) view).getText() == "Offline Workshops")
+                if (((Button) view).getText() == "Offline Workshops")
                 {
                     intent.putExtra("imgTransition", R.drawable.workshop3);
                 }
-                if (((TextView) view).getText() == "Jimmy Dasaint")
+                if (((Button) view).getText() == "Jimmy Dasaint")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor1);
                 }
-                if (((TextView) view).getText() == "Ben Decker")
+                if (((Button) view).getText() == "Ben Decker")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor2);
                 }
-                if (((TextView) view).getText() == "Naresh Narasimhan")
+                if (((Button) view).getText() == "Naresh Narasimhan")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor3);
                 }
 
                 //Angel investors
 
-                if (((TextView) view).getText() == "Roger Ehrenberg")
+                if (((Button) view).getText() == "Roger Ehrenberg")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor1);
                 }
-                if (((TextView) view).getText() == "Keith Rabois")
+                if (((Button) view).getText() == "Keith Rabois")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor2);
                 }
-                if (((TextView) view).getText() == "Marc Andreessen")
+                if (((Button) view).getText() == "Marc Andreessen")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor3);
                 }
-                if (((TextView) view).getText() == "Anupam Mittal")
+                if (((Button) view).getText() == "Anupam Mittal")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor4);
                 }
 
                 //Venture Capital Firms
 
-                if (((TextView) view).getText() == "Accel")
+                if (((Button) view).getText() == "Accel")
                 {
                     intent.putExtra("imgTransition", R.drawable.venturecapitalfirm1);
                 }
-                if (((TextView) view).getText() == "Andreessen Horowitz")
+                if (((Button) view).getText() == "Andreessen Horowitz")
                 {
                     intent.putExtra("imgTransition", R.drawable.venturecapitalfirm2);
                 }
-                if (((TextView) view).getText() == "Index Ventures")
+                if (((Button) view).getText() == "Index Ventures")
                 {
                     intent.putExtra("imgTransition", R.drawable.venturecapitalfirm3);
                 }
-                if (((TextView) view).getText() == "Sequoia")
+                if (((Button) view).getText() == "Sequoia")
                 {
                     intent.putExtra("imgTransition", R.drawable.venturecapitalfirm4);
                 }
 
                 //Crowdfunding Sites
 
-                if (((TextView) view).getText() == "Kickstarter")
+                if (((Button) view).getText() == "Kickstarter")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding1);
                 }
-                if (((TextView) view).getText() == "Indiegogo")
+                if (((Button) view).getText() == "Indiegogo")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding2);
                 }
-                if (((TextView) view).getText() == "Crowd Supply")
+                if (((Button) view).getText() == "Crowd Supply")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding3);
                 }
 
                 //Banks for Business Loans
 
-                if (((TextView) view).getText() == "Bank of America")
+                if (((Button) view).getText() == "Bank of America")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank1);
                 }
-                if (((TextView) view).getText() == "JPMorgan Chase and Co.")
+                if (((Button) view).getText() == "JPMorgan Chase and Co.")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank2);
                 }
-                if (((TextView) view).getText() == "Wells Fargo")
+                if (((Button) view).getText() == "Wells Fargo")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank3);
                 }
@@ -199,33 +201,33 @@ public class HomeActivity extends AppCompatActivity {
         //adding functionality to bottom navigation
 
 
-                bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                        switch (menuItem.getItemId()) {
-                            case R.id.fundingItem:
-                                startActivity(new Intent(getApplicationContext(),
-                                        FundingActivity.class));
-                                overridePendingTransition(0, 0);
-                                return true;
-                            case R.id.homeItem:
-                                return true;
-                            case R.id.learnItem:
-                                startActivity(new Intent(getApplicationContext(),
-                                        LearnActivity.class));
-                                overridePendingTransition(0, 0);
-                                return true;
-                        }
-                        return false;
-                    }
-                });
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.fundingItem:
+                        startActivity(new Intent(getApplicationContext(),
+                                FundingActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                    case R.id.homeItem:
+                        return true;
+                    case R.id.learnItem:
+                        startActivity(new Intent(getApplicationContext(),
+                                LearnActivity.class));
+                        overridePendingTransition(0, 0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
-                //adding functionality to the profile button
+        //adding functionality to the profile button
         profileDetails.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(HomeActivity.this, profileDetails,  ViewCompat.getTransitionName(profileDetails));
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(HomeActivity.this, profileDetails,  ViewCompat.getTransitionName(bottomNavigationView));
                 startActivity(intent, options.toBundle());
 
             }

@@ -12,6 +12,7 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class ProfileUpdateActivity extends AppCompatActivity {
 
+
     AppCompatImageButton imageButton;
     Button updateUser;
     EditText profileEditEmail, profileEditPassword, profileEditName;

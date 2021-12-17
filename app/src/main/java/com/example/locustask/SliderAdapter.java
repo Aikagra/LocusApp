@@ -25,11 +25,11 @@ public class SliderAdapter extends SliderViewAdapter<SliderAdapter.SliderViewHol
     @Override
     public void onBindViewHolder(SliderViewHolder viewHolder, int position) {
         viewHolder.imageView.setImageResource(images[position]);
-       // viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-         //   public void onClick(View view) {
-                //imp
-         //   }
+        // viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        //   @Override
+        //   public void onClick(View view) {
+        //imp
+        //   }
         //});
 
     }
