@@ -57,7 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         rootNode = FirebaseDatabase.getInstance();
 
-        userId = mAuth.getCurrentUser().getUid();
+        userId = mAuth.getCurrentUser().getProviderId();
         reference = rootNode.getReference("Users").child(userId);
 
         reference.addValueEventListener(new ValueEventListener() {
@@ -89,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            FancyToast.makeText(view.getContext(), "Verification Email Failed", FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
+                            FancyToast.makeText(view.getContext(), "Verification Email Failed to Send", FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                             Log.d(TAG, "on Failure : email not sent" + e.getMessage());
                             cdd.dismiss();
                         }
@@ -112,8 +112,8 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, ProfileUpdateActivity.class );
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(ProfileActivity.this, profileDetails,  ViewCompat.getTransitionName(profileDetails));
+                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class );
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(ProfileActivity.this, profileDetails,  ViewCompat.getTransitionName(editProfileBtn));
                 startActivity(intent, options.toBundle());
             }
         });

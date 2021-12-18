@@ -125,7 +125,7 @@ public class SignupActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (!task.isSuccessful())
                                             {
-                                                FancyToast.makeText(SignupActivity.this, "Verification Email Sent", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                                                FancyToast.makeText(SignupActivity.this, "Verification Email Sent", FancyToast.SUCCESS, FancyToast.LENGTH_SHORT, true).show();
                                                 cdd.show();
                                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                             }else {
@@ -135,7 +135,7 @@ public class SignupActivity extends AppCompatActivity {
                                         }
                                     });
                                 } else {
-                                    FancyToast.makeText(SignupActivity.this, "Signup Unsuccessful", FancyToast.ERROR, FancyToast.LENGTH_SHORT, true).show();
+                                    FancyToast.makeText(SignupActivity.this, "Signup Unsuccessful",FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                                     cdd.show();
                                 }
                             }

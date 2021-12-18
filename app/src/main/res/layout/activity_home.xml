@@ -47,6 +47,7 @@
                     app:sliderIndicatorSelectedColor="@color/blue"
                     app:sliderIndicatorUnselectedColor="#8eabf4"
                     app:sliderScrollTimeInSec="3"
+                    android:background="@color/white"
                     app:sliderStartAutoCycle="true" />
 
             </androidx.cardview.widget.CardView>
@@ -75,6 +76,7 @@
                         android:layout_height="330dp"
                         android:focusedMonthDateColor="@color/blue"
                         android:unfocusedMonthDateColor="@color/white"
+                        android:background="@color/white"
                         />
 
                 </LinearLayout>

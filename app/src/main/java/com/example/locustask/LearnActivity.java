@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -52,7 +53,7 @@ public class LearnActivity extends AppCompatActivity {
 
 
 
-        arrayList = new ArrayList<String>();
+        arrayList = new ArrayList<>();
 
         //search view complete search for mentors
         arrayList.add("Jimmy Dasaint");
@@ -87,7 +88,7 @@ public class LearnActivity extends AppCompatActivity {
         arrayList.add("Wells Fargo");
 
 
-        //change image and name through clicking from the searchview items
+        //change image and name through clicking from the SearchView items
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arrayList);
         AutoCompleteTextView autoCompleteTextView = findViewById(R.id.searchBarLearn);
@@ -99,97 +100,100 @@ public class LearnActivity extends AppCompatActivity {
                 Log.e("Index", "" + i);
                 Intent intent = new Intent(LearnActivity.this, ExpandedCardView.class);
                 //change name
-                intent.putExtra("name_transition", ((TextView) view).getText());
+                intent.putExtra("name_transition", ((Button) view).getText());
                 //may need later
                 //intent.putExtra("text_transition", "homeTextTransition");
                 //change image
-                //Workshops
+
                 intent.putExtra("imgTransition", R.drawable.workshop1);
-                if (((TextView) view).getText() == "The Open University")
+
+                //Workshops
+
+                if (((Button) view).getText() == "The Open Institute")
                 {
                     intent.putExtra("imgTransition", R.drawable.workshop2);
                 }
-                if (((TextView) view).getText() == "Offline Workshops")
+                if (((Button) view).getText() == "Online Workshops")
                 {
                     intent.putExtra("imgTransition", R.drawable.workshop3);
                 }
-                if (((TextView) view).getText() == "Jimmy Dasaint")
+                if (((Button) view).getText() == "Jimmy Dasint")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor1);
                 }
-                if (((TextView) view).getText() == "Ben Decker")
+                if (((Button) view).getText() == "Ben Decker")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor2);
                 }
-                if (((TextView) view).getText() == "Naresh Narasimhan")
+                if (((Button) view).getText() == "Naresh Narasimba")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor3);
                 }
 
                 //Angel investors
 
-                if (((TextView) view).getText() == "Roger Ehrenberg")
+                if (((Button) view).getText() == "Roger Ehrenburger")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor1);
                 }
-                if (((TextView) view).getText() == "Keith Rabois")
+                if (((Button) view).getText() == "Keith Rabos")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor2);
                 }
-                if (((TextView) view).getText() == "Marc Andreessen")
+                if (((Button) view).getText() == "Marc Andreasan")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor3);
                 }
-                if (((TextView) view).getText() == "Anupam Mittal")
+                if (((Button) view).getText() == "Anupam Mittal")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor4);
                 }
 
                 //Venture Capital Firms
 
-                if (((TextView) view).getText() == "Accel")
+                if (((Button) view).getText() == "Assel")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm1);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm1);
                 }
-                if (((TextView) view).getText() == "Andreessen Horowitz")
+                if (((Button) view).getText() == "Andreasan Horowitz")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm2);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm2);
                 }
-                if (((TextView) view).getText() == "Index Ventures")
+                if (((Button) view).getText() == "Index Venture")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm3);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm3);
                 }
-                if (((TextView) view).getText() == "Sequoia")
+                if (((Button) view).getText() == "Seqouia")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm4);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm4);
                 }
 
                 //Crowdfunding Sites
 
-                if (((TextView) view).getText() == "Kickstarter")
+                if (((Button) view).getText() == "Kickstart")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding1);
                 }
-                if (((TextView) view).getText() == "Indiegogo")
+                if (((Button) view).getText() == "Indiego")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding2);
                 }
-                if (((TextView) view).getText() == "Crowd Supply")
+                if (((Button) view).getText() == "Crowd Fund")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding3);
                 }
 
                 //Banks for Business Loans
 
-                if (((TextView) view).getText() == "Bank of America")
+                if (((Button) view).getText() == "Bank of USA")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank1);
                 }
-                if (((TextView) view).getText() == "JPMorgan Chase and Co.")
+                if (((Button) view).getText() == "JPMorgan Chase and Co")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank2);
                 }
-                if (((TextView) view).getText() == "Wells Fargo")
+                if (((Button) view).getText() == "Wells Fargo")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank3);
                 }
@@ -199,7 +203,7 @@ public class LearnActivity extends AppCompatActivity {
         });
 
 
-        //change name and image through clicking the cardview
+        //change name and image when CardView is clicked
 
         cardViewMentor2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -291,7 +295,7 @@ public class LearnActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LearnActivity.this, ProfileActivity.class);
-                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(LearnActivity.this, profileDetails,  ViewCompat.getTransitionName(profileDetails));
+                ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(LearnActivity.this, profileDetails,  ViewCompat.getTransitionName(bottomNavigationView));
                 startActivity(intent, options.toBundle());
             }
         });

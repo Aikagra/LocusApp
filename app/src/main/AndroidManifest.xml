@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.locus">
-        <activity
-            android:name="com.example.locustask.ForgotPasswordActivity"
-            android:exported="false" />
+       
         <activity
             android:name="com.example.locustask.ProfileUpdateActivity"
             android:exported="false" />

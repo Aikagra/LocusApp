@@ -35,11 +35,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_main);
+
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setExitTransition(new Explode());
         }
-        setContentView(R.layout.activity_main);
+
 
         registerBtn = findViewById(R.id.registerBtn);
         loginBtn = findViewById(R.id.loginBtn);
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     loginEmail.requestFocus();
                     return;
                 }
-                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                if (!Patterns.WEB_URL.matcher(email).matches()){
                     loginEmail.setError("Add a valid email");
                     loginEmail.requestFocus();
                     return;
@@ -92,25 +95,20 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 cdd.show();
-                WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
-                layoutParams.dimAmount = 0.75f;
-                getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
-                getWindow().setAttributes(layoutParams);
 
-                mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
 
                             startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                            FancyToast.makeText(MainActivity.this, "Logged In Successfully", FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                            cdd.dismiss();
+                            FancyToast.makeText(MainActivity.this, "Logged In Successfully",FancyToast.SUCCESS, FancyToast.LENGTH_SHORT, true).show();
 
                         } else {
-                            FancyToast.makeText(MainActivity.this, "Failed to login, please check the credentials", FancyToast.LENGTH_LONG, FancyToast.ERROR, true).show();
-                            cdd.dismiss();
+                            FancyToast.makeText(MainActivity.this, "Failed to login, please check the credentials", FancyToast.ERROR, FancyToast.LENGTH_LONG, true).show();
 
                         }
+                        cdd.dismiss();
                     }
                 });
             }
@@ -122,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         registerBtn.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
                 startActivity(intent,
                         ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 

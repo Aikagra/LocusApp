@@ -14,8 +14,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -29,7 +27,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomeActivity extends AppCompatActivity {
 
     private int[] images;
-    private String[] text;
     private SliderAdapter adapter;
     private SliderView sliderView;
     BottomNavigationView bottomNavigationView;
@@ -54,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //array list for search view
 
-        arrayList = new ArrayList<String>();
+        arrayList = new ArrayList<>();
 
         //search view complete search for mentors
         arrayList.add("Jimmy Dasaint");
@@ -91,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //change image and name through clicking from the searchview items
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, arrayList);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, arrayList);
         AutoCompleteTextView autoCompleteTextView = findViewById(R.id.searchBar);
         autoCompleteTextView.setAdapter(arrayAdapter);
 
@@ -101,17 +98,19 @@ public class HomeActivity extends AppCompatActivity {
                 Log.e("Index", "" + i);
                 Intent intent = new Intent(HomeActivity.this, ExpandedCardView.class);
                 //change name
-                //Workshops
+
                 intent.putExtra("imgTransition", R.drawable.workshop1);
-                if (((Button) view).getText() == "The Open University")
+
+                //Workshops
+                if (((Button) view).getText() == "The Open Institute")
                 {
                     intent.putExtra("imgTransition", R.drawable.workshop2);
                 }
-                if (((Button) view).getText() == "Offline Workshops")
+                if (((Button) view).getText() == "Online Workshops")
                 {
                     intent.putExtra("imgTransition", R.drawable.workshop3);
                 }
-                if (((Button) view).getText() == "Jimmy Dasaint")
+                if (((Button) view).getText() == "Jimmy Dasint")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor1);
                 }
@@ -119,22 +118,22 @@ public class HomeActivity extends AppCompatActivity {
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor2);
                 }
-                if (((Button) view).getText() == "Naresh Narasimhan")
+                if (((Button) view).getText() == "Naresh Narasimba")
                 {
                     intent.putExtra("imgTransition", R.drawable.mentor3);
                 }
 
                 //Angel investors
 
-                if (((Button) view).getText() == "Roger Ehrenberg")
+                if (((Button) view).getText() == "Roger Ehrenburger")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor1);
                 }
-                if (((Button) view).getText() == "Keith Rabois")
+                if (((Button) view).getText() == "Keith Rabos")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor2);
                 }
-                if (((Button) view).getText() == "Marc Andreessen")
+                if (((Button) view).getText() == "Marc Andreasan")
                 {
                     intent.putExtra("imgTransition", R.drawable.angelinvestor3);
                 }
@@ -145,45 +144,45 @@ public class HomeActivity extends AppCompatActivity {
 
                 //Venture Capital Firms
 
-                if (((Button) view).getText() == "Accel")
+                if (((Button) view).getText() == "Assel")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm1);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm1);
                 }
-                if (((Button) view).getText() == "Andreessen Horowitz")
+                if (((Button) view).getText() == "Andreasan Horowitz")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm2);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm2);
                 }
-                if (((Button) view).getText() == "Index Ventures")
+                if (((Button) view).getText() == "Index Venture")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm3);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm3);
                 }
-                if (((Button) view).getText() == "Sequoia")
+                if (((Button) view).getText() == "Seqouia")
                 {
-                    intent.putExtra("imgTransition", R.drawable.venturecapitalfirm4);
+                    intent.putExtra("imgTranstion", R.drawable.venturecapitalfirm4);
                 }
 
                 //Crowdfunding Sites
 
-                if (((Button) view).getText() == "Kickstarter")
+                if (((Button) view).getText() == "Kickstart")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding1);
                 }
-                if (((Button) view).getText() == "Indiegogo")
+                if (((Button) view).getText() == "Indiego")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding2);
                 }
-                if (((Button) view).getText() == "Crowd Supply")
+                if (((Button) view).getText() == "Crowd Fund")
                 {
                     intent.putExtra("imgTransition", R.drawable.crowdfunding3);
                 }
 
                 //Banks for Business Loans
 
-                if (((Button) view).getText() == "Bank of America")
+                if (((Button) view).getText() == "Bank of USA")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank1);
                 }
-                if (((Button) view).getText() == "JPMorgan Chase and Co.")
+                if (((Button) view).getText() == "JPMorgan Chase and Co")
                 {
                     intent.putExtra("imgTransition", R.drawable.bank2);
                 }
@@ -237,7 +236,7 @@ public class HomeActivity extends AppCompatActivity {
         images = new int[]{R.drawable.carousel1, R.drawable.carousel2, R.drawable.carousel3};
 
 
-        adapter = new SliderAdapter(images, text);
+        adapter = new SliderAdapter(images);
 
         sliderView.setSliderAdapter(adapter);
 
