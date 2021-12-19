@@ -63,7 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                nameMember.setText(snapshot.child("name").getValue(String.class).toString());
+                nameMember.setText(snapshot.child("name").getValue(String.class));
             }
 
             @Override
